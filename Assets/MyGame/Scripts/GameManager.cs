@@ -7,9 +7,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
     public GameObject gameOverPanel;
-    public Text scoreText;
-    string defaultText;
-    
+    public Text scoreText;    
 
     private void Awake()
     {
