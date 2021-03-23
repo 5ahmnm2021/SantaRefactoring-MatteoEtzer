@@ -2,6 +2,8 @@
 
 public class PlayerController : MonoBehaviour
 {
+    private const string Name = "Jump";
+    private const string Message = "DeleteMe";
     Rigidbody2D rb;
     Animator anim, anim2, anim3, anim4, anim5;
     [SerializeField] float jumpForce;
@@ -38,10 +40,10 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = Vector2.up * jumpForce;
 
-        anim.SetTrigger("Jump");
+        anim.SetTrigger(Name);
 
         GameManager.instance.IncrementScore();
-        Debug.Log("DeleteMe");
+        Debug.Log(Message);
     }
 
     private bool SetGameOverTrue()
