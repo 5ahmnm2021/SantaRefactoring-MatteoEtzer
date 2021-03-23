@@ -17,16 +17,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        Debug.Log("in Start");   
-    }
-
-    void Update()
-    {
-        Debug.Log("in Update");
-    }
-
     public void GameOver()
     {
         ObstacleSpawner.instance.gameOver = true;
