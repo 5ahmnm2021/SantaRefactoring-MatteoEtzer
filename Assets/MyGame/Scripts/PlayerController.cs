@@ -2,9 +2,9 @@
 
 public class PlayerController : MonoBehaviour
 {
-    private const string Name = "Jump";
-    private const string Message = "DeleteMe";
-    private const string V = "Ground";
+    private const string JumpString = "Jump";
+    private const string DeleteMessage = "DeleteMe";
+    private const string Ground = "Ground";
     Rigidbody2D rb;
     Animator anim, anim2, anim3, anim4, anim5;
     [SerializeField] float jumpForce;
@@ -36,10 +36,10 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = Vector2.up * jumpForce;
 
-        anim.SetTrigger(Name);
+        anim.SetTrigger(JumpString);
 
         GameManager.instance.IncrementScore();
-        Debug.Log(Message);
+        Debug.Log(DeleteMessage);
     }
 
     private bool SetGameOverTrue()
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision)   {
-        if(collision.gameObject.tag == V)
+        if(collision.gameObject.tag == Ground)
         {
             grounded = true;}
     }
