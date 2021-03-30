@@ -3,8 +3,9 @@
 public class PlayerController : MonoBehaviour
 {
     private const string JumpString = "Jump";
-    private const string DeleteMessage = "DeleteMe";
     private const string Ground = "Ground";
+    private const string Obstacle = "Obstacle";
+    private const string SantaDeath = "SantaDeath";
     Rigidbody2D rb;
     Animator anim, anim2, anim3, anim4, anim5;
     [SerializeField] float jumpForce;
@@ -39,7 +40,6 @@ public class PlayerController : MonoBehaviour
         anim.SetTrigger(JumpString);
 
         GameManager.instance.IncrementScore();
-        Debug.Log(DeleteMessage);
     }
 
     private bool SetGameOverTrue()
@@ -55,10 +55,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Obstacle"){
+        if(collision.gameObject.tag == Obstacle)
+        {
             GameManager.instance.GameOver();
             Destroy(collision.gameObject);
-            anim.Play("SantaDeath");
+            anim.Play(SantaDeath);
             gameOver = SetGameOverTrue();
         }
     }
