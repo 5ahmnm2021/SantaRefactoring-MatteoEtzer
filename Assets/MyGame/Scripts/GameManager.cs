@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     private const string SceneName1 = "MenuScene";
     public static GameManager instance;
     public GameObject gameOverPanel;
-    public Text scoreText;    
+    public Text scoreText;
 
     private void Awake()
     {
