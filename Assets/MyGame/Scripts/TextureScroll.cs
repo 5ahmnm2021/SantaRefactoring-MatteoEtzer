@@ -2,7 +2,6 @@
 
 public class TextureScroll : MonoBehaviour
 {
-
     public float scrollSpeed;
     public bool scroll = true;
 
@@ -12,16 +11,6 @@ public class TextureScroll : MonoBehaviour
     {
         backgroundMaterial = GetComponent<Renderer>().material;
 
-    }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
     }
 
     private void FixedUpdate()
